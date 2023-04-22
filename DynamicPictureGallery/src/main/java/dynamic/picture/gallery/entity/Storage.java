@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Storage {
 	private String nickname;
-	private String article_number;
 	private String user_folder;
-	private String article_folder;
 	private String file_name;
 	private String file_extension;
 	private String local_path;

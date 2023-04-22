@@ -10,7 +10,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class GalleryData {
 	@NonNull
+	private String nickname;
+	@NonNull //treba biti unique vezati ćemo na listu sa slikama
     private String galleryName;
+	@NonNull 
+	private Integer sizeOfGallery;
 	//trebamo neku listu slika dodati ćemo to kasnije
 	private Integer currentIndex;
 	private Integer previousIndex;

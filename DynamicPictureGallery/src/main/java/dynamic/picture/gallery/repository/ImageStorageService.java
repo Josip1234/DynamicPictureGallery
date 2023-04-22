@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
  */
 public interface ImageStorageService {
 	void init();
-   public void storeFile(String nickname,String article_number,MultipartFile fileName);
+   public void storeFile(String nickname,String galleryName,MultipartFile fileName);
    Stream<Path> loadAll();
    Path load(String fileName);
    Resource loadAsResource(String fileName);

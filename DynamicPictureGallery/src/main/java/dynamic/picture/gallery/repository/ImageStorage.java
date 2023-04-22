@@ -36,25 +36,23 @@ public class ImageStorage implements ImageStorageService {
 	}
 
 	@Override
-	public void storeFile(String nickname,String category,MultipartFile fileName) {
+	public void storeFile(String nickname,String galleryName,MultipartFile fileName) {
 		try {
 			if(fileName.isEmpty()) {
 				throw new StorageException("Failed to store empty file.");
 			}
-			Path destinationFile=this.fileLocation.resolve(Paths.get(nickname+"//"+category+"//"+fileName.getOriginalFilename())).normalize().toAbsolutePath();
+			Path destinationFile=this.fileLocation.resolve(Paths.get(nickname+"//"+galleryName+"//"+fileName.getOriginalFilename())).normalize().toAbsolutePath();
 	       StorageRepJdbcImpl impl = new StorageRepJdbcImpl();
 		    String fileExtension=GeneralFunctions.getFileExtension("(?<=\\.).*", fileName.getResource().getFilename());
-		    String url="http://localhost:8080/e-sell/en/images/"+nickname+"/"+category+"/"+fileName.getResource().getFilename();
+		    String url="http://localhost:8080/e-sell/en/images/"+nickname+"/"+galleryName+"/"+fileName.getResource().getFilename();
 	        Storage storage= new Storage();
-		    storage.setArticle_folder(category);
-		    storage.setArticle_number(category);
 		    storage.setFile_extension(fileExtension);
 		    storage.setFile_name(fileName.getResource().getFilename());
 		    storage.setLocal_path(destinationFile.toString());
 		    storage.setNickname(nickname);
 		    storage.setUrl(url);
 		    storage.setUser_folder(nickname);
-		    String relativeLink="/images/"+nickname+"/"+category+"/"+fileName.getResource().getFilename();
+		    String relativeLink="/images/"+nickname+"/"+galleryName+"/"+fileName.getResource().getFilename();
 		    storage.setRelative_link(relativeLink);
 		    repository.save(storage);
 
