@@ -5,6 +5,8 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -17,22 +19,20 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfiguration {
 
-	public String[] authenticatedPaths;
-	public String[] nonAuthenticatedPaths;
+	@Autowired
+    private JdbcTemplate jdbcTemplate;
 	
 	@Autowired
-	DataSource dataSource;
+	private DataSource dataSource;
 
-
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
-		auth.jdbcAuthentication().dataSource(dataSource).usersByUsernameQuery(
-				"select email,hash_password, 'true' as enabled from Sellers where email=?").passwordEncoder(new BCryptPasswordEncoder()).authoritiesByUsernameQuery("select email,hash_password from Sellers where email = ?");
-		}
-	
+	 private final String authenticateSQL = "SELECT USERNAME as user_name, PASSWORD as user_pwd, ACCOUNT_ENABLED as user_enabled FROM USERS WHERE USERNAME = ?";
+	    private final String authorizeSQL = "SELECT USERNAME as user_name, ROLE as user_role FROM USERSROLES WHERE USERNAME = ?";
+	    
+	 
 
 
 	 @Bean
-	    public PasswordEncoder passwordEncoder() {
+	    public PasswordEncoder encoder() {
 	        return new BCryptPasswordEncoder();
 	    }
 }
