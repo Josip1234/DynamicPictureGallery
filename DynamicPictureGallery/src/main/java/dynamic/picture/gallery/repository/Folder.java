@@ -51,7 +51,7 @@ public class Folder implements CreateFolders {
 	
 		   User user = (User) object;
 	
-		   Folder folder=new Folder(user.getNickname());
+		   Folder folder=new Folder(user.getUsername());
 
 		   setDone(makeDirectory(folder));
 	   }

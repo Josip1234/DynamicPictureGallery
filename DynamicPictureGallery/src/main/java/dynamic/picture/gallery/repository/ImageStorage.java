@@ -49,7 +49,7 @@ public class ImageStorage implements ImageStorageService {
 		    storage.setFile_extension(fileExtension);
 		    storage.setFile_name(fileName.getResource().getFilename());
 		    storage.setLocal_path(destinationFile.toString());
-		    storage.setNickname(nickname);
+		    storage.setUsername(nickname);
 		    storage.setUrl(url);
 		    storage.setUser_folder(nickname);
 		    String relativeLink="/images/"+nickname+"/"+galleryName+"/"+fileName.getResource().getFilename();

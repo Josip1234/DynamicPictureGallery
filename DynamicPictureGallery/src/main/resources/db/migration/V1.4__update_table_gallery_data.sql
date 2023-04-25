@@ -1,1 +1,1 @@
-ALTER TABLE `gallery_data` ADD CONSTRAINT `user_fk` FOREIGN KEY (`nickname`) REFERENCES `user`(`nickname`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `gallery_data` ADD CONSTRAINT `user_fk` FOREIGN KEY (`username`) REFERENCES `user`(`username`) ON DELETE CASCADE ON UPDATE CASCADE;

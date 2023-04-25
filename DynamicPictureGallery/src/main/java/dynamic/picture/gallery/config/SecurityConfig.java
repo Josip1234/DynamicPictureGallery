@@ -11,25 +11,21 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+
+import dynamic.picture.gallery.entity.User;
+import dynamic.picture.gallery.repository.UserRepository;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfiguration {
 
-	@Autowired
-    private JdbcTemplate jdbcTemplate;
-	
-	@Autowired
-	private DataSource dataSource;
-
-	 private final String authenticateSQL = "SELECT USERNAME as user_name, PASSWORD as user_pwd, ACCOUNT_ENABLED as user_enabled FROM USERS WHERE USERNAME = ?";
-	    private final String authorizeSQL = "SELECT USERNAME as user_name, ROLE as user_role FROM USERSROLES WHERE USERNAME = ?";
-	    
 	 
-
+	 
 
 	 @Bean
 	    public PasswordEncoder encoder() {

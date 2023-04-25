@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Storage {
-	private String nickname;
+	private String username;
 	private String user_folder;
 	private String file_name;
 	private String file_extension;
