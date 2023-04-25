@@ -10,14 +10,10 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 @Controller
 public class LoginController {
 	
-	@GetMapping("/e-sell/en/login")
+	@GetMapping("/login")
 	public String getLogin() {
 		return "login";
 	}
 
 
-	public void addViewControllers(ViewControllerRegistry registry) {
-	
-		registry.addViewController("/e-sell/en//login");
-	}
 }

@@ -2,7 +2,7 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(50) COLLATE utf8_croatian_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_croatian_ci NOT NULL,
-  `hash_password` longtext COLLATE utf8_croatian_ci NOT NULL
+  `password` longtext COLLATE utf8_croatian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
 
 
