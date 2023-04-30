@@ -16,6 +16,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 
 import dynamic.picture.gallery.entity.User;
 import dynamic.picture.gallery.repository.UserRepository;
@@ -27,7 +28,14 @@ public class SecurityConfig extends WebSecurityConfiguration {
 	 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-	return http.authorizeHttpRequests().requestMatchers("/DynamicPictureGallery/register").permitAll()
+	return http.authorizeHttpRequests().requestMatchers("/DynamicPictureGallery/register","/DynamicPictureGallery/login").permitAll() 
+			.and()
+			.formLogin()
+			.loginPage("/login")
+			.loginProcessingUrl("/authenticate")
+			.usernameParameter("user")
+			.passwordParameter("pwd")
+			.defaultSuccessUrl("/uploadFile")
 			.and().build();
 	}
 
@@ -35,4 +43,5 @@ public class SecurityConfig extends WebSecurityConfiguration {
 	    public PasswordEncoder encoder() {
 	        return new BCryptPasswordEncoder();
 	    }
+	 
 }
