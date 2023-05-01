@@ -28,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfiguration {
 	 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-	return http.authorizeHttpRequests().requestMatchers("/DynamicPictureGallery/register","/DynamicPictureGallery/login").permitAll() 
+	return http.authorizeHttpRequests().requestMatchers("/","/register","/login").permitAll() 
 			.and()
 			.formLogin()
 			.loginPage("/login")

@@ -12,7 +12,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @Controller
-@RequestMapping("/DynamicPictureGallery/register")
+@RequestMapping("/register")
 @RequiredArgsConstructor
 public class RegistrationController {
 	@NonNull
