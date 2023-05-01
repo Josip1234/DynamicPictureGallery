@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.0.5</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath>/DynamicPictureGallery</relativePath> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>dynamic.picture.gallery</groupId>
 	<artifactId>DynamicPictureGallery</artifactId>
@@ -119,4 +119,5 @@
 		
 	</build>
 
+	<url>/DynamicPictureGallery</url>
 </project>
