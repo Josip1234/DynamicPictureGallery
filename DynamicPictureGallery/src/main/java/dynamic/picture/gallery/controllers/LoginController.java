@@ -12,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 @RequestMapping("/DynamicPictureGallery")
 public class LoginController {
 	
+	
 	@GetMapping("/login")
 	public String getLogin() {
 		return "login";
