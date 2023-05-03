@@ -27,6 +27,6 @@ public class RegistrationController {
 	@PostMapping
 	public String processRegistration(User form) {
 	userRepo.save(form.toUser(passwordEncoder));
-	return "redirect:/DynamicPictureGallery/login";
+	return "redirect:/login";
 	}
 }

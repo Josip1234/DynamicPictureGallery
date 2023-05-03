@@ -33,9 +33,7 @@ public class SecurityConfig extends WebSecurityConfiguration {
 			.formLogin()
 			.loginPage("/login")
 			.loginProcessingUrl("/authenticate")
-			.usernameParameter("user")
-			.passwordParameter("pwd")
-			.defaultSuccessUrl("/uploadFile")
+			.defaultSuccessUrl("/",true)
 			.and().build();
 	}
 
