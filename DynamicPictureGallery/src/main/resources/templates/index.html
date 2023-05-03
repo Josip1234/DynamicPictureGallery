@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org"
+ lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +9,8 @@
     <title>Dynamic Picture Gallery</title>
 </head>
 <body>
-    <a href="http://" target="_blank" rel="noopener noreferrer">Registration</a>
-    <a href="http://" target="_blank" rel="noopener noreferrer">Login</a>
-    <a href="http://" target="_blank" rel="noopener noreferrer">Upload files</a>
+    <a th:href="@{/register}"  rel="noopener noreferrer">Registration</a>
+    <a th:href="@{/login}"  rel="noopener noreferrer">Login</a>
+    <a th:href="@{/}"  rel="noopener noreferrer">Homepage</a>
 </body>
 </html>
