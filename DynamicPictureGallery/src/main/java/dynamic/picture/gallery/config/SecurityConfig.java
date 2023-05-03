@@ -42,6 +42,7 @@ public class SecurityConfig extends WebSecurityConfiguration {
 			.and()
 			.formLogin()
 			.loginPage("/login")
+			.loginProcessingUrl("/authenticate")
 			.defaultSuccessUrl("/",true)
 			.and().build();
 	}

@@ -25,6 +25,10 @@ public class LoginController {
 		return "login";
 	}
 	
-
+	@PostMapping("/login")
+	public String getSuccess() {
+		System.out.println(GeneralFunctions.getUserEmail());
+		return "index";
+	}
 
 }
