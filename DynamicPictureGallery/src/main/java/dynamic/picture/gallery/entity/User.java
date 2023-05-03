@@ -51,16 +51,7 @@ private String password;
 @Column(name="email")
 private String email;
 
-@Bean
-public UserDetailsService userDetailsService(UserRepository userRepository) {
-	return username->{
-		User user = userRepository.findByUsername(username);
-		if(user != null) {
-			return user;
-		}
-		throw new UsernameNotFoundException("User '"+ username+"' not found");
-	};
-}
+
 
 public User toUser(PasswordEncoder passwordEncoder) {
 return new User(username,passwordEncoder.encode(password),email);
@@ -74,7 +65,7 @@ public Collection<? extends GrantedAuthority> getAuthorities() {
 @Override
 public String getUsername() {
 	// TODO Auto-generated method stub
-	return this.username;
+	return getUsername();
 }
 @Override
 public boolean isAccountNonExpired() {
@@ -96,4 +87,6 @@ public boolean isEnabled() {
 	// TODO Auto-generated method stub
 	return true;
 }
+
+
 }
