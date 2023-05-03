@@ -55,7 +55,9 @@ private String email;
 public UserDetailsService userDetailsService(UserRepository userRepository) {
 	return username->{
 		User user = userRepository.findByUsername(username);
-		if(user != null) return user;
+		if(user != null) {
+			return user;
+		}
 		throw new UsernameNotFoundException("User '"+ username+"' not found");
 	};
 }
