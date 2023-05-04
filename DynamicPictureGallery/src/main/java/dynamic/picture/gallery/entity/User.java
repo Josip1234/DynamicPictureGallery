@@ -65,7 +65,7 @@ public Collection<? extends GrantedAuthority> getAuthorities() {
 @Override
 public String getUsername() {
 	// TODO Auto-generated method stub
-	return getUsername();
+	return this.username;
 }
 @Override
 public boolean isAccountNonExpired() {
