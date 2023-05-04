@@ -22,10 +22,9 @@ public class UserDetailServiceRep implements UserDetailsService {
 		System.out.println(user.getUsername());
 	    if (user != null) {
 	        return user;
-	      }else {
-	    	  throw new UsernameNotFoundException(
-                      "User '" + username + "' not found");
 	      }
+		return user; 
+	      
 	      
 	}
 

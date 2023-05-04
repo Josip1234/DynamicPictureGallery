@@ -41,8 +41,7 @@ public class SecurityConfig extends WebSecurityConfiguration {
 	return http.authorizeHttpRequests().requestMatchers("/","/register","/home").permitAll() 
 			.and()
 			.formLogin()
-			.loginPage("/login")
-			.loginProcessingUrl("/authenticate").
+			.loginProcessingUrl("/authenticate")
 			.defaultSuccessUrl("/",true)
 			.and().build();
 	}
