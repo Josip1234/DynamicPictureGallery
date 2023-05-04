@@ -38,11 +38,11 @@ public class SecurityConfig extends WebSecurityConfiguration {
 	
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-	return http.authorizeHttpRequests().requestMatchers("/","/register","/login","/home").permitAll() 
+	return http.authorizeHttpRequests().requestMatchers("/","/register","/home").permitAll() 
 			.and()
 			.formLogin()
 			.loginPage("/login")
-			.loginProcessingUrl("/authenticate")
+			.loginProcessingUrl("/authenticate").
 			.defaultSuccessUrl("/",true)
 			.and().build();
 	}
@@ -52,5 +52,4 @@ public class SecurityConfig extends WebSecurityConfiguration {
 	        return new BCryptPasswordEncoder();
 	    }
 
-	
 }
