@@ -15,5 +15,6 @@ public class Storage {
 	private String local_path;
 	private String url;
 	private String relative_link;
+	private String gallery_name;
 	
 }
