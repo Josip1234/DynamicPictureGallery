@@ -40,9 +40,11 @@ public class SecurityConfig extends WebSecurityConfiguration {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 	return http.authorizeHttpRequests().requestMatchers("/","/register","/home").permitAll() 
 			.and()
+			.authorizeHttpRequests().requestMatchers("/uploadFile").authenticated()
+			.and()
 			.formLogin()
 			.loginProcessingUrl("/authenticate")
-			.defaultSuccessUrl("/",true)
+			.defaultSuccessUrl("/uploadFile",true)
 			.and().build();
 	}
 
