@@ -46,7 +46,7 @@ public class SecurityConfig extends WebSecurityConfiguration {
 			.and()
 			.formLogin()
 			.loginProcessingUrl("/authenticate")
-			.defaultSuccessUrl("/uploadFile",true)
+			.defaultSuccessUrl("/galleryName",true)
 			.and().build();
 	}
 

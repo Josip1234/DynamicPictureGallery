@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http:/ /www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dynamic Picture Gallery - create new</title>
 </head>
 <body>
-    
+    <form th:action="@{/galleryName}" th:object="${galleryData}" method="post">
+        <label for="galleryName">Gallery Name: </label>
+<input type="text" th:field="*{galleryName}"/>
+<br/>
+        <input type="hidden" name="hidden" th:field="*{username}"  value="username">
+        <input type="number" name="sizeOfGallery" th:field="*{sizeOfGallery}" id="sizeOfGallery">
+        <input type="submit" value="Create new gallery">
+    </form>
 </body>
 </html>
