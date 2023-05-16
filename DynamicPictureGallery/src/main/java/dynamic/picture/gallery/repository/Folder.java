@@ -3,6 +3,7 @@ package dynamic.picture.gallery.repository;
 
 import java.io.File;
 
+import org.springframework.stereotype.Service;
 
 import dynamic.picture.gallery.entity.User;
 import lombok.Data;
@@ -54,7 +55,13 @@ public class Folder implements CreateFolders {
 		   Folder folder=new Folder(user.getUsername());
 
 		   setDone(makeDirectory(folder));
-	   }
+	   }else if(object instanceof String) {
+		   String user = (String) object;
+			
+		   Folder folder=new Folder(user);
+
+		   setDone(makeDirectory(folder));
+	   }// this will be removed
 		
 	
 		return isDone();

@@ -11,5 +11,7 @@ import dynamic.picture.gallery.entity.User;
 public interface GalleryDataRepository extends JpaRepository<GalleryData, Integer> {
 	  @Query(value = "SELECT username FROM USER WHERE EMAIL = ?", nativeQuery = true)
 	  String findByEmailAddress(String emailAddress);
+	  @Query(value = "SELECT email FROM USER WHERE USER = ?", nativeQuery = true)
+	  String findEmailFromUsername(String username);
 
 }

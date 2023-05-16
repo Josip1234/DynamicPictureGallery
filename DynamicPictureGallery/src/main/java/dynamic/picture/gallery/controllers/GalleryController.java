@@ -1,5 +1,6 @@
 package dynamic.picture.gallery.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import dynamic.picture.gallery.entity.GalleryData;
 import dynamic.picture.gallery.entity.User;
 import dynamic.picture.gallery.functions.GeneralFunctions;
+import dynamic.picture.gallery.repository.Folder;
 import dynamic.picture.gallery.repository.GalleryDataRepository;
+import dynamic.picture.gallery.repository.ImageStorage;
+import dynamic.picture.gallery.repository.UserRepository;
 import lombok.AllArgsConstructor;
 
 
@@ -20,6 +24,10 @@ import lombok.AllArgsConstructor;
 public class GalleryController {
 	private GalleryDataRepository dataRepository;
 	
+	private ImageStorage imageStorage;
+
+
+	
 	@ModelAttribute(name = "galleryData")
 	public GalleryData galleryData() {
 	return new GalleryData();
@@ -27,6 +35,9 @@ public class GalleryController {
     
 	@GetMapping("/galleryName")
 	public String getGalleryNameForm() {
+		Folder folder =new Folder();
+		String user=GeneralFunctions.getUserEmail();//find username
+         folder.createFolder(user);
 		return "galleryName";
 	}
 	
