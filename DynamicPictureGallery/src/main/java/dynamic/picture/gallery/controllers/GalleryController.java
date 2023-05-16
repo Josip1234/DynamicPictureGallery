@@ -35,9 +35,7 @@ public class GalleryController {
     
 	@GetMapping("/galleryName")
 	public String getGalleryNameForm() {
-		Folder folder =new Folder();
-		String user=GeneralFunctions.getUserEmail();//find username
-         folder.createFolder(user);
+	
 		return "galleryName";
 	}
 	

@@ -24,13 +24,21 @@ public class RegistrationController {
 	@NonNull
 	private PasswordEncoder passwordEncoder;
 	
+	@NonNull 
+	private GalleryDataRepository dataRepository;
+	
 	@GetMapping
 	public String registerForm() {
 	return "register";
 	}
 	@PostMapping
 	public String processRegistration(User form) {
+	
 	userRepo.save(form.toUser(passwordEncoder));
+	Folder folder =new Folder();
+	String user=GeneralFunctions.getUserEmail();//find username
+     System.out.println(folder.createFolder("iggoblih"));
+	
 	return "redirect:/login";
 	}
 }
