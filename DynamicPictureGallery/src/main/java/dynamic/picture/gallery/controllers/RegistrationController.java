@@ -37,7 +37,8 @@ public class RegistrationController {
 	userRepo.save(form.toUser(passwordEncoder));
 	Folder folder =new Folder();
 	String user=GeneralFunctions.getUserName();//find username
-     System.out.println(folder.createFolder("iggoblih"));
+	System.out.println(user);
+     System.out.println(folder.createFolder("new"));
 	
 	return "redirect:/login";
 	}
