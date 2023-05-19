@@ -41,9 +41,13 @@ public class GalleryController {
 	
 	@PostMapping("/galleryName")
 	public String insertIntoGallery(@ModelAttribute("GalleryData") GalleryData data) {
-		String email=GeneralFunctions.getUserEmail();
-		String us= dataRepository.findByEmailAddress(email);
-		data.setUsername(us);
+		
+		String email=GeneralFunctions.getUserName();
+	
+		//String us= dataRepository.findEmailFromUsername(email);
+		//System.out.println(us);
+		data.setUsername(email);
+	
 		dataRepository.save(data);
 		return "redirect:/uploadFile";
 	}

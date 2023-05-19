@@ -36,7 +36,7 @@ public class GeneralFunctions {
      * @author Josip Bošnjak
      * @return email from logged in user
      */
-	public static String getUserEmail() {
+	public static String getUserName() {
 		String email="";
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
