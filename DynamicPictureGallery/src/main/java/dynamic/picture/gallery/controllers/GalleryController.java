@@ -47,8 +47,21 @@ public class GalleryController {
 		//String us= dataRepository.findEmailFromUsername(email);
 		//System.out.println(us);
 		data.setUsername(email);
-	
+		
 		dataRepository.save(data);
+		//create folder object
+		Folder firstPath = new Folder();
+	    firstPath.setFolderName(data.getUsername());
+	    String defaultPath=firstPath.getDefaultPath();
+	    firstPath.setDefaultPath(defaultPath);
+	    System.out.println(firstPath);
+	    
+	    Folder secondPath= new Folder(firstPath.getDefaultPath()+firstPath.getFolderName()+"/", data.getGallery_name());
+	    secondPath.setDefaultPath(defaultPath+firstPath.getFolderName()+"/");
+	    
+		Folder create=new Folder();
+		create.createFolder(secondPath);
+		
 		return "redirect:/uploadFile";
 	}
 	

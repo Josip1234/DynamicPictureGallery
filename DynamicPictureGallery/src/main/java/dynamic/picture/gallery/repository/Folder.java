@@ -61,7 +61,12 @@ public class Folder implements CreateFolders {
 		   Folder folder=new Folder(user);
 
 		   setDone(makeDirectory(folder));
-	   }// this will be removed
+	   }else if(object instanceof Folder) {
+		   Folder folder = (Folder) object;
+			
+
+		   setDone(makeDirectory(folder));
+	   }
 		
 	
 		return isDone();
