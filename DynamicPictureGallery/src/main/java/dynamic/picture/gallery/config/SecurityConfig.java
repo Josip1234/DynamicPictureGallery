@@ -47,6 +47,7 @@ public class SecurityConfig extends WebSecurityConfiguration {
 			.formLogin()
 			.loginProcessingUrl("/authenticate")
 			.defaultSuccessUrl("/galleryName",true)
+			.and().logout().logoutSuccessUrl("/home")
 			.and().build();
 	}
 
