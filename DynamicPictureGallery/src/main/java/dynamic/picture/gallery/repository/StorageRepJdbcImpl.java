@@ -21,9 +21,9 @@ public class StorageRepJdbcImpl implements StorageRepository {
 	@Override
 	public Storage save(Storage storage) {
 		jdbcTemplate.update(
-				"insert into Storage_system (username,user_folder,file_name,file_extension, local_path, url,type,relative_link) values(?,?,?,?,?,?,?,?,?,?)",
+				"insert into Storage_system (username,user_folder,file_name,file_extension, local_path, url,relative_link,gallery_name) values(?,?,?,?,?,?,?,?)",
 				storage.getUsername(),storage.getUser_folder(),storage.getFile_name(),
-				storage.getFile_extension(),storage.getLocal_path(),storage.getUrl(),storage.getRelative_link()
+				storage.getFile_extension(),storage.getLocal_path(),storage.getUrl(),storage.getRelative_link(),storage.getGallery_name()
 				);
 		return storage;
 		

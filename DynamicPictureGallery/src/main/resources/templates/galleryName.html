@@ -5,16 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Picture Gallery - create new</title>
+    <script>
+       
+        function storeValues(){
+            var gallery_name=document.getElementById("gn").value;
+      
+        document.cookie = "gallery_name="+gallery_name;
+           
+         return true;
+      
+        }
+      </script>
 </head>
 <body>
     <form method="POST" th:action="@{/logout}">
         <input type="submit" value="Logout"/>
         </form>
         
-    <form th:action="@{/galleryName}" th:object="${galleryData}" method="post">
+    <form th:action="@{/galleryName}" th:object="${galleryData}" method="post" >
         <label for="gallery_name">Gallery Name: </label>
-<input type="text" th:field="*{gallery_name}"/>
+<input type="text" th:field="*{gallery_name}" id="gn" onchange="storeValues()"/>
 <br/>
+
         <input type="number" name="size_of_gallery" th:field="*{size_of_gallery}" id="size_of_gallery">
         <input type="submit" value="Create new gallery">
     </form>

@@ -44,7 +44,7 @@ public class ImageStorage implements ImageStorageService {
 			Path destinationFile=this.fileLocation.resolve(Paths.get(nickname+"//"+galleryName+"//"+fileName.getOriginalFilename())).normalize().toAbsolutePath();
 	       StorageRepJdbcImpl impl = new StorageRepJdbcImpl();
 		    String fileExtension=GeneralFunctions.getFileExtension("(?<=\\.).*", fileName.getResource().getFilename());
-		    String url="http://localhost:8080/e-sell/en/images/"+nickname+"/"+galleryName+"/"+fileName.getResource().getFilename();
+		    String url="http://localhost:8080/DynamicPictureGallery/images/"+nickname+"/"+galleryName+"/"+fileName.getResource().getFilename();
 	        Storage storage= new Storage();
 		    storage.setFile_extension(fileExtension);
 		    storage.setFile_name(fileName.getResource().getFilename());
@@ -54,6 +54,7 @@ public class ImageStorage implements ImageStorageService {
 		    storage.setUser_folder(nickname);
 		    String relativeLink="/images/"+nickname+"/"+galleryName+"/"+fileName.getResource().getFilename();
 		    storage.setRelative_link(relativeLink);
+		    storage.setGallery_name(galleryName);
 		    repository.save(storage);
 
 			StorageSettings settings= new StorageSettings();
