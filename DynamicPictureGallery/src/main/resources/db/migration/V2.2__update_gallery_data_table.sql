@@ -1,0 +1,1 @@
+ALTER TABLE `gallery_data` ADD `category` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_croatian_ci NOT NULL DEFAULT 'Uncategorized' AFTER `size_of_gallery`, ADD `date_of_upload` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `category`, ADD `date_of_update` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `date_of_upload`;
