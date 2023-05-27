@@ -2,16 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
  xmlns:th="http://www.thymeleaf.org"
  lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Picture Gallery</title>
+<head th:replace="fragments/header :: header">
 </head>
 <body>
-    <a th:href="@{/register}"  rel="noopener noreferrer">Registration</a>
-    <a th:href="@{/login}"  rel="noopener noreferrer">Login</a>
-    <a th:href="@{/uploadFile}" target="_blank" rel="noopener noreferrer">Upload picture galleries</a>
-    <a th:href="@{/}"  rel="noopener noreferrer">Homepage</a>
+    <div th:replace="fragments/navigation :: navigation">
+    </div>
 </body>
 </html>
