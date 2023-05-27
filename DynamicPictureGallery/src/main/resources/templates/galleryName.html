@@ -18,6 +18,10 @@
       </script>
 </head>
 <body>
+     
+    <div th:replace="fragments/navigation :: navigation">
+
+
     <form method="POST" th:action="@{/logout}">
         <input type="submit" value="Logout"/>
         </form>

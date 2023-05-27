@@ -2,13 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
  xmlns:th="http://www.thymeleaf.org"
  lang="en">
- <head>
- <title>Dynamic picture gallery</title>
- <meta name="viewport" content="width=device-width, initial-scale=1">
-
- </head>
+ <head th:replace="fragments/header :: header">
  <body>
-
+  <div th:replace="fragments/navigation :: navigation">
+  </div>
  
   <div class="container">
     <h1>Register</h1>
