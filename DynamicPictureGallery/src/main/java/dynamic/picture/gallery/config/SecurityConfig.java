@@ -38,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfiguration {
 	
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-	return http.authorizeHttpRequests().requestMatchers("/","/register","/home").permitAll() 
+	return http.authorizeHttpRequests().requestMatchers("/","/register","/home","/js/**","/static/**").permitAll() 
 			.and()
 			.authorizeHttpRequests().requestMatchers("/uploadFile").authenticated()
 			.and()
@@ -51,6 +51,7 @@ public class SecurityConfig extends WebSecurityConfiguration {
 			.and().build();
 	}
 
+	 
 	 @Bean
 	    public PasswordEncoder encoder() {
 	        return new BCryptPasswordEncoder();
