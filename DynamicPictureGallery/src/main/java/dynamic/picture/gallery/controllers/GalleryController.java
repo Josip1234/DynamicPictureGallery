@@ -1,6 +1,8 @@
 package dynamic.picture.gallery.controllers;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,12 +49,13 @@ public class GalleryController {
 	
 	@ModelAttribute(name = "galleryData")
 	public GalleryData galleryData() {
+		
 	return new GalleryData();
 	}
     
 	@GetMapping("/galleryName")
 	public String getGalleryNameForm() {
-	
+
 		return "galleryName";
 	}
 	

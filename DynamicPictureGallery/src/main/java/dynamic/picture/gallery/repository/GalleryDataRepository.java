@@ -13,5 +13,7 @@ public interface GalleryDataRepository extends JpaRepository<GalleryData, Intege
 	  String findByEmailAddress(String emailAddress);
 	  @Query(value = "SELECT email FROM USER WHERE username = ?", nativeQuery = true)
 	  String findEmailFromUsername(String username);
+	  @Query(value = "SELECT * FROM Gallery_data WHERE username=?", nativeQuery = true)
+	  List<GalleryData> findGalleryData(String username);
 
 }
