@@ -1,0 +1,17 @@
+<div th:fragment="listFragment">
+    <ul>
+        <li th:each="data : ${galleryData}">
+         <span th:text="${data.username}"></span><br>
+          <span th:text="${data.gallery_name}"></span></li>
+      </ul>
+
+   </div>
+
+   <div th:fragment="listOfAllGaleriesFragment">
+    <ol>
+        <li th:each="data : ${galleryData}">
+         <span th:text="${data.username}"></span>
+          <span th:text="${data.gallery_name}"></span></li>
+      </ol>
+
+   </div>

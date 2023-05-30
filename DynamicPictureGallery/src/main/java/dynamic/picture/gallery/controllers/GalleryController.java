@@ -59,6 +59,13 @@ public class GalleryController {
 		return "galleryName";
 	}
 	
+	@GetMapping("/findGalleries")
+	public String getListOfAllGalleries(Model model) {
+		List<GalleryData> data = dataRepository.findAll();
+		model.addAttribute("galleryData",data);
+		return "findGalleries";
+	}
+	
 	@PostMapping("/galleryName")
 	public String insertIntoGallery(@ModelAttribute("GalleryData") GalleryData data) {
 		
