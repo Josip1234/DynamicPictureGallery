@@ -11,7 +11,7 @@
     <ol>
         <li th:each="data : ${galleryData}">
          <span th:text="${data.username}"></span>
-          <span th:text="${data.gallery_name}"></span></li>
+          <span th:id="${data.gallery_name}" th:text="${data.gallery_name}" class="txt" onclick="store_values(this.id)"></span></li>
       </ol>
 
    </div>
