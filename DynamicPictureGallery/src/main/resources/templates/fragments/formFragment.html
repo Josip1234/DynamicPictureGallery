@@ -5,12 +5,49 @@
         </form>
         
     <form th:action="@{/galleryName}" th:object="${galleryData}" method="post" >
-        <label for="gallery_name">Gallery Name: </label>
-<input type="text" th:field="*{gallery_name}" id="gn" onchange="storeValues()"/>
-<br/>
+        <label>Gallery Name: </label>
+<input type="text" th:field="*{gallery_name}" id="gn" onchange="storeValues()">
+<br>
 
         <input type="number" name="size_of_gallery" th:field="*{size_of_gallery}" id="size_of_gallery">
         <input type="submit" value="Create new gallery">
     </form>
 
+   </div>
+
+
+   <div th:fragment="registrationFragment">
+    <form method="POST" th:action="@{/register}" id="registerForm">
+        <label>Username: </label>
+        <input type="text" name="username"><br>
+        <label>Password: </label>
+        <input type="password" name="password"><br>
+        <label>Confirm password: </label>
+        <input type="password" name="confirm"><br>
+        
+        <label>Email: </label>
+        <input type="email" name="email">
+        <input type="submit" value="Register">
+        </form>
+   </div>
+
+   <div th:fragment="uploadFileFragment">
+    <div class="col-md-6">
+        <div th:if="${message}">
+           <h2 th:text="${message}"/>
+       </div>
+   
+       <div>
+           <form method="POST"  th:action="@{/uploadFile}" enctype="multipart/form-data">
+                        <label class="form-label">File to upload:</label>
+                         <div class="input-group mb-3">
+                  <input type="file" name="file" id="upload" class="form-control" >
+            
+                </div>
+          <div class="col-12">
+                   <input type="submit" value="Upload" class="btn btn-primary">
+               </div>
+           </form>
+       </div>
+    </div>
    </div>

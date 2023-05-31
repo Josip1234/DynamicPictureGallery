@@ -16,24 +16,8 @@
  <div id="rw" class="row mt-4">
  <div class="col mt-5">
  
-
- <div class="col-md-6">
- 	<div th:if="${message}">
-		<h2 th:text="${message}"/>
-	</div>
-
-	<div>
-		<form method="POST"  th:action="@{/uploadFile}" enctype="multipart/form-data">
-                     <label for="upload" class="form-label">File to upload:</label>
-                      <div class="input-group mb-3">
-               <input type="file" name="file" id="upload" class="form-control" />
-         
-             </div>
-	   <div class="col-12">
-                <input type="submit" value="Upload" class="btn btn-primary">
-            </div>
-		</form>
-	</div>
+	<div th:replace="~{fragments/formFragment :: uploadFileFragment}">
+    </div>
 
 <!--
 	<div>
@@ -47,7 +31,7 @@
  </div>
  </div>
  </div>
-  </div>
+  
         
 
 
