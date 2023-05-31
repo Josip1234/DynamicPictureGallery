@@ -17,16 +17,13 @@
 
 
    <div th:fragment="registrationFragment">
-    <form method="POST" th:action="@{/register}" id="registerForm">
+    <form method="POST" th:action="@{/register}" th:object="${User}" id="registerForm">
         <label>Username: </label>
-        <input type="text" name="username"><br>
+        <input type="text" th:field="*{username}" name="username"><br>
         <label>Password: </label>
-        <input type="password" name="password"><br>
-        <label>Confirm password: </label>
-        <input type="password" name="confirm"><br>
-        
+        <input type="password" th:field="*{password}" name="password"><br>
         <label>Email: </label>
-        <input type="email" name="email">
+        <input type="email" th:field="*{email}" name="email">
         <input type="submit" value="Register">
         </form>
    </div>

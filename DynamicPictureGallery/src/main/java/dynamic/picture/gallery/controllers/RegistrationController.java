@@ -4,9 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import dynamic.picture.gallery.entity.GalleryData;
 import dynamic.picture.gallery.entity.User;
 import dynamic.picture.gallery.functions.GeneralFunctions;
 import dynamic.picture.gallery.repository.Folder;
@@ -27,8 +29,15 @@ public class RegistrationController {
 	@NonNull 
 	private GalleryDataRepository dataRepository;
 	
+	@ModelAttribute(name = "User")
+	public User getUser() {
+		
+	return new User();
+	}
+	
 	@GetMapping
 	public String registerForm() {
+		
 	return "register";
 	}
 	@PostMapping
