@@ -6,7 +6,7 @@
         
     <form th:action="@{/galleryName}" th:object="${galleryData}" method="post" >
         <label>Gallery Name: </label>
-<input type="text" th:field="*{gallery_name}" id="gn" onchange="storeValues()">
+<input type="text" th:field="*{gallery_name}" id="gn" onchange="storeValue()">
 <br>
 
         <input type="number" name="size_of_gallery" th:field="*{size_of_gallery}" id="size_of_gallery">

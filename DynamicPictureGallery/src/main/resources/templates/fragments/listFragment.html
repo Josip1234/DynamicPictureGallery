@@ -19,7 +19,7 @@
    <div th:fragment="showImages">
     <ol>
         <li th:each="image : ${images}">
-            <img th:src="${image.url}" th:alt="${image.file_name}"> <br>
+            <img th:src="${image.relative_link}" th:alt="${image.file_name}"> <br>
 
           <span th:text="${image.file_name}"></span> <br>
           <span th:text="${image.local_path}"></span> <br>
