@@ -18,3 +18,5 @@ function store_values(id){
 function deleteCookies(){
     document.cookie = "gallery_name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/DynamicPictureGallery;";
   }
+
+  
