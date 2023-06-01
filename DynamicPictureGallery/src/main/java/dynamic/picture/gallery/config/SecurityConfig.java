@@ -38,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfiguration {
 	
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-	return http.authorizeHttpRequests().requestMatchers("/","/register","/home","/js/**","/static/**","/findGalleries","/css/**").permitAll() 
+	return http.authorizeHttpRequests().requestMatchers("/","/register","/home","/js/**","/static/**","/images/**","/findGalleries","/css/**","/findGalleries/galleryPreview").permitAll() 
 			.and()
 			.authorizeHttpRequests().requestMatchers("/uploadFile").authenticated()
 			.and()

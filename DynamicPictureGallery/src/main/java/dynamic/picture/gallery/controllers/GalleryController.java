@@ -25,6 +25,7 @@ import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBui
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import dynamic.picture.gallery.entity.GalleryData;
+import dynamic.picture.gallery.entity.Storage;
 import dynamic.picture.gallery.entity.User;
 import dynamic.picture.gallery.exceptions.StorageFileNotFoundException;
 import dynamic.picture.gallery.functions.GeneralFunctions;
@@ -32,6 +33,7 @@ import dynamic.picture.gallery.repository.Folder;
 import dynamic.picture.gallery.repository.GalleryDataRepository;
 import dynamic.picture.gallery.repository.ImageStorage;
 import dynamic.picture.gallery.repository.ImageStorageService;
+import dynamic.picture.gallery.repository.StorageRepository;
 import dynamic.picture.gallery.repository.UserRepository;
 import jakarta.servlet.http.Cookie;
 import lombok.AllArgsConstructor;
@@ -42,7 +44,7 @@ import lombok.AllArgsConstructor;
 public class GalleryController {
 	private GalleryDataRepository dataRepository;
 	
-	private ImageStorage imageStorage;
+	private StorageRepository repository;
 	private final ImageStorageService imageStorageService;
 
 
@@ -58,6 +60,15 @@ public class GalleryController {
 
 		return "galleryName";
 	}
+	
+	@GetMapping("/findGalleries/galleryPreview")
+	public String GalleryPreview(@CookieValue(value="gallery_name", required = true) String gallery_name,Model model) {
+		
+        List<Storage> getListOfImages = repository.findByGalleryName(gallery_name);
+        model.addAttribute("images",getListOfImages);
+		return "galleryPreview";
+	}
+
 	
 	@GetMapping("/findGalleries")
 	public String getListOfAllGalleries(Model model) {
@@ -152,5 +163,6 @@ public class GalleryController {
 		//log.info("success");
 		return ResponseEntity.notFound().build();
 	}
+	
 
 }

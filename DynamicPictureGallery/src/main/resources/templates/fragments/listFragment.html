@@ -15,3 +15,17 @@
       </ol>
 
    </div>
+
+   <div th:fragment="showImages">
+    <ol>
+        <li th:each="image : ${images}">
+            <img th:src="${image.url}" th:alt="${image.file_name}"> <br>
+
+          <span th:text="${image.file_name}"></span> <br>
+          <span th:text="${image.local_path}"></span> <br>
+          <span th:text="${image.url}"></span> <br>
+          <span th:text="${image.relative_link}"></span>
+        </li>
+      </ol>
+
+   </div>

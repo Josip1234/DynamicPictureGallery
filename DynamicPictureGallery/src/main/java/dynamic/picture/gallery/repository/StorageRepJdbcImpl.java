@@ -1,11 +1,16 @@
 package dynamic.picture.gallery.repository;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import dynamic.picture.gallery.entity.Storage;
 import lombok.NoArgsConstructor;
+
 
 @Repository
 @NoArgsConstructor
@@ -27,6 +32,16 @@ public class StorageRepJdbcImpl implements StorageRepository {
 				);
 		return storage;
 		
+	}
+
+	@Override
+	public List<Storage> findByGalleryName(String galleryName) {
+
+		return jdbcTemplate.query("select file_name,local_path,url,relative_link from Storage_system WHERE gallery_name=?", this::mapRowToStorage,galleryName);
+	}
+	private Storage mapRowToStorage(ResultSet rs, int rowNum) throws SQLException {
+		return new Storage(rs.getString("file_name"),rs.getString("local_path"),rs.getString("url"),rs.getString("relative_link"));
+	
 	}
 
 }
