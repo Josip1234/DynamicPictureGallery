@@ -1,4 +1,4 @@
-package dynamic.picture.gallery.repository;
+package dynamic.picture.gallery.services;
 
 import java.nio.file.Path;
 import java.util.stream.Stream;

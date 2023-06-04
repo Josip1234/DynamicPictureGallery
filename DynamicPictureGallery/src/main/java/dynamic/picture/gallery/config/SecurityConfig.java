@@ -44,6 +44,8 @@ public class SecurityConfig extends WebSecurityConfiguration {
 			.and()
 			.authorizeHttpRequests().requestMatchers("/galleryName").authenticated()
 			.and()
+			.authorizeHttpRequests().requestMatchers("/galleryCategory").authenticated()
+			.and()
 			.formLogin()
 			.loginProcessingUrl("/authenticate")
 			.defaultSuccessUrl("/galleryName",true)

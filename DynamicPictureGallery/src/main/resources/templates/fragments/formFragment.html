@@ -48,3 +48,13 @@
        </div>
     </div>
    </div>
+
+
+   
+   <div th:fragment="categoryFragment">
+    <form method="POST" th:action="@{/galleryCategory}" th:object="${galleryCategory}" id="galleryCategoryForm">
+        <label>Insert new category: </label>
+        <input type="text" th:field="*{category_name}" name="category_name"><br>
+        <input type="submit" value="Insert new category">
+        </form>
+   </div>

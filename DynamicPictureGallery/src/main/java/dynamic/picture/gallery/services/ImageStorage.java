@@ -1,4 +1,4 @@
-package dynamic.picture.gallery.repository;
+package dynamic.picture.gallery.services;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,10 +15,13 @@ import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import dynamic.picture.gallery.entity.Folder;
 import dynamic.picture.gallery.entity.Storage;
 import dynamic.picture.gallery.exceptions.StorageException;
 import dynamic.picture.gallery.exceptions.StorageFileNotFoundException;
 import dynamic.picture.gallery.functions.GeneralFunctions;
+import dynamic.picture.gallery.repository.StorageRepJdbcImpl;
+import dynamic.picture.gallery.repository.StorageRepository;
 import dynamic.picture.gallery.settings.StorageSettings;
 
 

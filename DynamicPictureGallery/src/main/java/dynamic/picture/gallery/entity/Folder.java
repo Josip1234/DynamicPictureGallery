@@ -1,11 +1,11 @@
-package dynamic.picture.gallery.repository;
+package dynamic.picture.gallery.entity;
 
 
 import java.io.File;
 
 import org.springframework.stereotype.Service;
 
-import dynamic.picture.gallery.entity.User;
+import dynamic.picture.gallery.repository.CreateFolders;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

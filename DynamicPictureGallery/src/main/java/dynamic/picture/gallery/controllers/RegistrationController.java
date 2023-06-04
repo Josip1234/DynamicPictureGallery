@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import dynamic.picture.gallery.entity.Folder;
 import dynamic.picture.gallery.entity.GalleryData;
 import dynamic.picture.gallery.entity.User;
 import dynamic.picture.gallery.functions.GeneralFunctions;
-import dynamic.picture.gallery.repository.Folder;
 import dynamic.picture.gallery.repository.GalleryDataRepository;
 import dynamic.picture.gallery.repository.UserRepository;
 import lombok.NonNull;

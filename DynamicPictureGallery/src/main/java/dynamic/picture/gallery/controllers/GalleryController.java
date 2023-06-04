@@ -24,17 +24,17 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import dynamic.picture.gallery.entity.Folder;
 import dynamic.picture.gallery.entity.GalleryData;
 import dynamic.picture.gallery.entity.Storage;
 import dynamic.picture.gallery.entity.User;
 import dynamic.picture.gallery.exceptions.StorageFileNotFoundException;
 import dynamic.picture.gallery.functions.GeneralFunctions;
-import dynamic.picture.gallery.repository.Folder;
 import dynamic.picture.gallery.repository.GalleryDataRepository;
-import dynamic.picture.gallery.repository.ImageStorage;
-import dynamic.picture.gallery.repository.ImageStorageService;
 import dynamic.picture.gallery.repository.StorageRepository;
 import dynamic.picture.gallery.repository.UserRepository;
+import dynamic.picture.gallery.services.ImageStorage;
+import dynamic.picture.gallery.services.ImageStorageService;
 import jakarta.servlet.http.Cookie;
 import lombok.AllArgsConstructor;
 
@@ -57,7 +57,7 @@ public class GalleryController {
     
 	@GetMapping("/galleryName")
 	public String getGalleryNameForm() {
-
+       
 		return "galleryName";
 	}
 	
