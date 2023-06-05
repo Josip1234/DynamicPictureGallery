@@ -61,6 +61,8 @@ public class GalleryController {
 		return "galleryName";
 	}
 	
+
+	
 	@GetMapping("/findGalleries/galleryPreview")
 	public String GalleryPreview(@CookieValue(value="gallery_name", required = true) String gallery_name,Model model) {
 		

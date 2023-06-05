@@ -16,4 +16,6 @@ public interface GalleryDataRepository extends JpaRepository<GalleryData, Intege
 	  @Query(value = "SELECT * FROM Gallery_data WHERE username=?", nativeQuery = true)
 	  List<GalleryData> findGalleryData(String username);
 
+
+
 }

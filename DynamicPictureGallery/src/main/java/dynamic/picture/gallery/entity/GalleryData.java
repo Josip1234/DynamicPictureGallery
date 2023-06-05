@@ -38,6 +38,10 @@ public class GalleryData {
 	private Integer size_of_gallery;
 	//trebamo neku listu slika dodati ćemo to kasnije
 	
+	@NonNull 
+	@Column(name="category")
+	private String category;
+	
 	@Column(name="username")
     //treba biti unique vezati ćemo na listu sa slikama
     private String username;
