@@ -25,11 +25,13 @@ import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBui
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import dynamic.picture.gallery.entity.Folder;
+import dynamic.picture.gallery.entity.GalleryCategory;
 import dynamic.picture.gallery.entity.GalleryData;
 import dynamic.picture.gallery.entity.Storage;
 import dynamic.picture.gallery.entity.User;
 import dynamic.picture.gallery.exceptions.StorageFileNotFoundException;
 import dynamic.picture.gallery.functions.GeneralFunctions;
+import dynamic.picture.gallery.repository.CategoryRepository;
 import dynamic.picture.gallery.repository.GalleryDataRepository;
 import dynamic.picture.gallery.repository.StorageRepository;
 import dynamic.picture.gallery.repository.UserRepository;
@@ -46,6 +48,7 @@ public class GalleryController {
 	
 	private StorageRepository repository;
 	private final ImageStorageService imageStorageService;
+	private final CategoryRepository categoryRepository;
 
 
 	
@@ -56,8 +59,10 @@ public class GalleryController {
 	}
     
 	@GetMapping("/galleryName")
-	public String getGalleryNameForm() {
-       
+	public String getGalleryNameForm(Model model) {
+		List<GalleryCategory> categories = new ArrayList<GalleryCategory>();
+		categories=categoryRepository.findAll();
+		model.addAttribute("categories",categories);
 		return "galleryName";
 	}
 	
@@ -82,6 +87,7 @@ public class GalleryController {
 	@PostMapping("/galleryName")
 	public String insertIntoGallery(@ModelAttribute("GalleryData") GalleryData data) {
 		
+		
 		Cookie cookie = new Cookie("gallery_name",data.getGallery_name());
 	   System.out.println(cookie.getValue());
 		
@@ -104,7 +110,7 @@ public class GalleryController {
 	    
 		Folder create=new Folder();
 		create.createFolder(secondPath);
-		
+	
 		return "redirect:/uploadFile";
 	}
 	
