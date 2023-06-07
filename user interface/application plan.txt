@@ -1,0 +1,17 @@
+we need a swing window to insert data into database for table gallery 
+spring will not be used, will use regular java swing.
+need connection to database list of gallery names, only column gallery name
+we will need also connection to database 
+need have one select choice then text field with gallery name
+then field type of gallery input text 
+and one submit button 
+then successfull or fail message
+
+data connection messages: if database not found, refused connection, failed inserting data into database 
+
+
+after user opens jar file woindow showes up, with database success or fail message, if fail message then we need message to check database connection,
+if connected, user can get list of gallery names. need to make also find gallery name in case there is too many records, and pagination with limot of 10.
+when user click on some of the gallery names, it will open new window with insert new type of gallery.. Then it will for each button open new woindow. 
+
+Update or delete will only have options for type of gallery not allery name!!! Gallery name will be read only. 
