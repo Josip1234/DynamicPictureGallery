@@ -16,6 +16,3 @@ when user click on some of the gallery names, it will open new window with inser
 
 Update or delete will only have options for type of gallery not allery name!!! Gallery name will be read only. 
 
-Info message: connecting to database, reading data...
-Error: Database could not be found, file could not be found.
-Success: Database has been connected, data has been added.
