@@ -15,3 +15,7 @@ if connected, user can get list of gallery names. need to make also find gallery
 when user click on some of the gallery names, it will open new window with insert new type of gallery.. Then it will for each button open new woindow. 
 
 Update or delete will only have options for type of gallery not allery name!!! Gallery name will be read only. 
+
+Info message: connecting to database, reading data...
+Error: Database could not be found, file could not be found.
+Success: Database has been connected, data has been added.
