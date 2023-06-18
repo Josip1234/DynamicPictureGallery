@@ -121,7 +121,7 @@ public class GalleryController {
 	 *we need to get coockies here see file:///C:/Users/Korisnik/Desktop/Tutorials/docs/spring%205/java%20-%20get%20cookie%20value%20by%20name%20in%20spring%20mvc%20-%20Stack%20Overflow.html
 	 */
 	@GetMapping("/uploadFile")
-	public String getUploadForm(@CookieValue(value="gallery_name", required = true) String gallery_name,Model model) throws IOException {
+	public String getUploadForm(@CookieValue(value="gallery_name", required = false) String gallery_name,Model model) throws IOException {
 		 System.out.println(gallery_name);
 		String user=GeneralFunctions.getUserName();
 		if(user!="anonymousUser") {
@@ -151,7 +151,7 @@ public class GalleryController {
 	}
 
 	@PostMapping("/uploadFile")
-	public String handleFileUpload(@CookieValue(value="gallery_name", required = true) String gallery_name, @RequestParam("file") MultipartFile file,
+	public String handleFileUpload(@CookieValue(value="gallery_name", required = false) String gallery_name, @RequestParam("file") MultipartFile file,
 			RedirectAttributes redirectAttributes) {
 		 //we will save here everything from url article number nickname user folder article folder file name file extension local path url and type of file.
 	     //log.info("success");

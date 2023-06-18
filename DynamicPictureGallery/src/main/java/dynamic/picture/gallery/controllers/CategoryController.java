@@ -34,7 +34,7 @@ public String insertIntoGalleryCategory(@ModelAttribute("galleryCategory") Galle
 	
     categoryRepository.save(data);
 	
-	return "redirect:/galleryName";
+	return "redirect:/";
 }
 
 
