@@ -27,3 +27,9 @@ function deleteCookies(){
   function deleteCookieTypeOfGallery(){
     document.cookie = "gallery_type=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/DynamicPictureGallery;";
   }
+
+  function removeScriptSlideShow(){
+     var value=document.getElementById('slideshow');
+     alert(value.outerHTML);
+     value.innerHTML="";
+  }

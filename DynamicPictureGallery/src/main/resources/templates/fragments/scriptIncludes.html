@@ -1,3 +1,3 @@
 
 
-<script th:fragment="slideshow" th:src="@{/js/slideshow.js}"></script>
+<script th:id="slideshow" th:if="${type}=='slideshow'" th:fragment="slideshow" th:src="@{/js/slideshow.js}"></script>
