@@ -22,6 +22,5 @@ function deleteCookies(){
   function addSelectTypeOfGalleryCookie(){
     var value = document.getElementById("gal_type").value;
     var cook="gallery_type="+value;
-    alert(cook);
     document.cookie=cook;
   }
