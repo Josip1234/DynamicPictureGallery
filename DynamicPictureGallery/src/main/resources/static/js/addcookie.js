@@ -19,4 +19,9 @@ function deleteCookies(){
     document.cookie = "gallery_name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/DynamicPictureGallery;";
   }
 
-  
+  function addSelectTypeOfGalleryCookie(){
+    var value = document.getElementById("gal_type").value;
+    var cook="gallery_type="+value;
+    alert(cook);
+    document.cookie=cook;
+  }

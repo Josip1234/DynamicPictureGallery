@@ -69,8 +69,9 @@
 
 
    <div th:fragment="galleryType">
-   <select name="g_type" id="gal_type">
-    <option value="slideshow">SLideshow Gallery</option>
+   <select name="g_type" id="gal_type" onchange="addSelectTypeOfGalleryCookie()">
+    <option value="selectValue">Select value</option>
+    <option value="slideshow">Slideshow Gallery</option>
    </select>
 
    </div>
