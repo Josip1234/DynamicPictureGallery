@@ -71,9 +71,12 @@ public class GalleryController {
 	@GetMapping("/findGalleries/galleryPreview")
 	public String GalleryPreview(@CookieValue(value="gallery_name", required = true) String gallery_name,@CookieValue(value="gallery_type", required = false) String gallery_type,Model model) {
 		System.out.println(gallery_type);
-	    if(gallery_type.length()==0) {
-	    	gallery_type="slideshow";
-	    }
+		
+		boolean isNull = (gallery_type == null || gallery_type.length() == 0);
+		
+		if(isNull==true) {
+			gallery_type="slideshow";
+		}
         List<Storage> getListOfImages = repository.findByGalleryName(gallery_name);
         model.addAttribute("images",getListOfImages);
         model.addAttribute("type",gallery_type);
