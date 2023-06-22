@@ -24,3 +24,6 @@ function deleteCookies(){
     var cook="gallery_type="+value;
     document.cookie=cook;
   }
+  function deleteCookieTypeOfGallery(){
+    document.cookie = "gallery_type=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/DynamicPictureGallery;";
+  }
