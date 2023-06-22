@@ -8,12 +8,13 @@
    </div>
 
    <div th:fragment="listOfAllGaleriesFragment">
-    <ol>
+    <ul>
         <li th:each="data : ${galleryData}">
          <span th:text="${data.username}"></span>
           <span th:id="${data.gallery_name}" th:text="${data.gallery_name}" class="txt" onclick="store_values(this.id)"></span></li>
-      </ol>
-
+        </ul>
+        <div th:replace="~{fragments/formFragment :: galleryType}">
+        </div>
    </div>
 
    <div th:fragment="showImages">
