@@ -1,3 +1,5 @@
 
 
 <script th:id="slideshow" th:if="${type}=='slideshow'" th:fragment="slideshow" th:src="@{/js/slideshow.js}"></script>
+<script th:id="slideshow_fragment_type_2" th:if="${type}=='slideshow_fragment_type_2'" th:fragment="slideshow_fragment_type_2" th:src="@{/js/slideshow_gallery.js}"></script>
+<link rel="stylesheet" th:if="${type}=='slideshow_fragment_type_2'" th:fragment="slideshow_fragment_type_2_style" th:href="@{/css/slideshow_gallery.css}">

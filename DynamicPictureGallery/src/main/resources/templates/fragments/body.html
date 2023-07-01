@@ -1,6 +1,10 @@
-<body th:fragment="slideshow_fragment" id="main_body"  onload="parse(),showSlides(1, 0),showSlides(1, 1)">
+<body th:fragment="slideshow_fragment" id="main_body"  onload="parse(),showSlides(1, 0),showSlides(1, 1),removeElement('slideshow2')">
+
     <div th:replace="~{fragments/navigation :: navigation}">
     </div>
     <div th:replace="~{fragments/listFragment :: showImages}">
+     
     </div>
+
 </body>
+
