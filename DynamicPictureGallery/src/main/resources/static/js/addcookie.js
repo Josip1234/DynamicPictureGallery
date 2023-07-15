@@ -1,7 +1,8 @@
 function storeValue(){
     var gallery_name=document.getElementById("gn").value;
-
-document.cookie = "gallery_name="+gallery_name;
+//this will fix spacing between gallery name 
+var gn=gallery_name.replaceAll(" ","_");
+document.cookie = "gallery_name="+gn;
    
  return true;
 

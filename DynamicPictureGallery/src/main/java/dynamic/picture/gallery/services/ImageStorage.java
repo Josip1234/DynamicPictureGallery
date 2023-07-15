@@ -40,6 +40,7 @@ public class ImageStorage implements ImageStorageService {
 
 	@Override
 	public void storeFile(String nickname,String galleryName,MultipartFile fileName) {
+		System.out.println(galleryName);
 		try {
 			if(fileName.isEmpty()) {
 				throw new StorageException("Failed to store empty file.");

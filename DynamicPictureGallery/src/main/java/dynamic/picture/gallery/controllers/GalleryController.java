@@ -94,9 +94,13 @@ public class GalleryController {
 	@PostMapping("/galleryName")
 	public String insertIntoGallery(@ModelAttribute("GalleryData") GalleryData data) {
 		
+		//this will fix folders to not call exception when user eneters spacing between gallery name
+		String galleryName=data.getGallery_name();
+		data.setGallery_name(galleryName.replace(' ', '_'));
+		System.out.println("Name"+data.getGallery_name());
 		
 		Cookie cookie = new Cookie("gallery_name",data.getGallery_name());
-	   System.out.println(cookie.getValue());
+	   //System.out.println(cookie.getValue());
 		
 		String email=GeneralFunctions.getUserName();
 	
@@ -110,7 +114,7 @@ public class GalleryController {
 	    firstPath.setFolderName(data.getUsername());
 	    String defaultPath=firstPath.getDefaultPath();
 	    firstPath.setDefaultPath(defaultPath);
-	    System.out.println(firstPath);
+	    //System.out.println(firstPath);
 	    
 	    Folder secondPath= new Folder(firstPath.getDefaultPath()+firstPath.getFolderName()+"/", data.getGallery_name());
 	    secondPath.setDefaultPath(defaultPath+firstPath.getFolderName()+"/");
