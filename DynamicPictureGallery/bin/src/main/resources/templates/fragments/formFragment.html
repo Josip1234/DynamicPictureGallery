@@ -1,0 +1,79 @@
+   <div th:fragment="galleryName">
+     
+    <strong>Warning!!! Current version of application does not suppoert names with spaces. Please, do not use spaces, it will be fixed in future versions of our application.</strong>
+    <form method="POST" th:action="@{/logout}">
+        <input type="submit" value="Logout"/>
+        </form>
+        
+    <form th:action="@{/galleryName}" th:object="${galleryData}" method="post" >
+        <label>Gallery Name: </label>
+<input type="text" th:field="*{gallery_name}" id="gn" onchange="storeValue()">
+<br>
+<label>Enter gallery size: </label> 
+        <input type="number" name="size_of_gallery" th:field="*{size_of_gallery}" id="size_of_gallery">
+<br>
+<label>Enter gallery category:</label>
+<select class="form-control" th:field="*{category}">
+    <option value="0">Select gallery category</option>
+   <option th:each="data : ${categories}" th:value="${data.category_name}" th:text="${data.category_name}"></option >
+ </select>
+
+        <input type="submit" value="Create new gallery">
+    </form>
+
+      
+
+   </div>
+
+
+   <div th:fragment="registrationFragment">
+    <form method="POST" th:action="@{/register}" th:object="${User}" id="registerForm">
+        <label>Username: </label>
+        <input type="text" th:field="*{username}" name="username"><br>
+        <label>Password: </label>
+        <input type="password" th:field="*{password}" name="password"><br>
+        <label>Email: </label>
+        <input type="email" th:field="*{email}" name="email">
+        <input type="submit" value="Register">
+        </form>
+   </div>
+
+   <div th:fragment="uploadFileFragment">
+    <div class="col-md-6">
+        <div th:if="${message}">
+           <h2 th:text="${message}"/>
+       </div>
+   
+       <div>
+           <form method="POST"  th:action="@{/uploadFile}" enctype="multipart/form-data">
+                        <label class="form-label">File to upload:</label>
+                         <div class="input-group mb-3">
+                  <input type="file" name="file" id="upload" class="form-control" >
+            
+                </div>
+          <div class="col-12">
+                   <input type="submit" value="Upload" class="btn btn-primary">
+               </div>
+           </form>
+       </div>
+    </div>
+   </div>
+
+
+   <div th:fragment="categoryFragment">
+    <form method="POST" th:action="@{/galleryCategory}" th:object="${galleryCategory}" id="galleryCategoryForm">
+        <label>Insert new category: </label>
+        <input type="text" th:field="*{category_name}" name="category_name"><br>
+        <input type="submit" value="Insert new category">
+        </form>
+   </div>
+
+
+   <div th:fragment="galleryType">
+   <select name="g_type" id="gal_type" onchange="addSelectTypeOfGalleryCookie()">
+    <option value="selectValue">Select value</option>
+    <option value="slideshow">Slideshow Gallery</option>
+    <option value="slideshow_fragment_type_2">Slideshow Gallery Type 2</option>
+   </select>
+
+   </div>

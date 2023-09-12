@@ -1,0 +1,1 @@
+ALTER TABLE `storage_system` ADD CONSTRAINT `gallery_name` FOREIGN KEY (`gallery_name`) REFERENCES `gallery_data`(`gallery_name`) ON DELETE CASCADE ON UPDATE CASCADE;

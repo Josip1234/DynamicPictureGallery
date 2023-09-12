@@ -1,0 +1,1 @@
+CREATE TABLE `dynamic_gallery`.`category` ( `id` INT NOT NULL AUTO_INCREMENT , `category_name` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_croatian_ci NOT NULL , PRIMARY KEY (`id`), UNIQUE (`category_name`)) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_croatian_ci;

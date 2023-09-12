@@ -1,0 +1,1 @@
+ALTER TABLE `type_of_gallery` ADD CONSTRAINT `type` FOREIGN KEY (`gallery_name`) REFERENCES `gallery_data`(`gallery_name`) ON DELETE CASCADE ON UPDATE CASCADE;

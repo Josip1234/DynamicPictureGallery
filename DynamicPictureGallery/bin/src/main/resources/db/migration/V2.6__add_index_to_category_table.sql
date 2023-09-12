@@ -1,0 +1,1 @@
+ALTER TABLE `gallery_data` ADD INDEX(`category`);

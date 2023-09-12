@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org"
+ lang="en">
+ <head th:replace="~{fragments/header :: header}">
+</head>
+ <body>
+	<div th:replace="~{fragments/navigation :: navigation}">
+    </div>
+ 
+  <div class="container">
+    <form method="POST" th:action="@{/logout}">
+		<input type="submit" value="Logout"/>
+		</form>
+
+ <div id="rw" class="row mt-4">
+ <div class="col mt-5">
+ 
+	<div th:replace="~{fragments/formFragment :: uploadFileFragment}">
+    </div>
+
+<!--
+	<div>
+		<ul>
+			<li th:each="file : ${files}">
+				<a th:href="${file}" th:text="${file}" />
+			</li>
+		</ul>
+	</div>           
+           -->  
+ </div>
+ </div>
+ </div>
+  
+        
+
+
+  
+
+
+ 
+ 
+ 
+ </body>
+</html>

@@ -1,0 +1,1 @@
+INSERT INTO `category` (`id`, `category_name`) VALUES (NULL, 'Uncategorized')

@@ -1,0 +1,43 @@
+<div th:fragment="listFragment">
+    <ul>
+        <li th:each="data : ${galleryData}">
+         <span th:text="${data.username}"></span><br>
+          <span th:text="${data.gallery_name}"></span></li>
+      </ul>
+
+   </div>
+
+   <div th:fragment="listOfAllGaleriesFragment">
+    <ul>
+        <li th:each="data : ${galleryData}">
+         <span th:text="${data.username}"></span>
+          <span th:id="${data.gallery_name}" th:text="${data.gallery_name}" class="txt" onclick="store_values(this.id)"></span></li>
+        </ul>
+        <div th:replace="~{fragments/formFragment :: galleryType}">
+        </div>
+   </div>
+
+   <div th:fragment="showImages" id="slideshow">
+      <div class="slideshow-container">
+          <div class="mySlides1" th:each="image : ${images}">
+            <img th:src="${image.url}" th:alt="${image.file_name}" class="txt" onload="parse()" style="width: 100%;"> 
+          </div>
+  
+          <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+      </div>
+   
+
+
+   </div>
+
+
+   
+
+
+
+
+
+
+ </div>
+
